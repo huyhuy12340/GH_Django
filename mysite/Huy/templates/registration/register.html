@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+<div class="container" style=" text-align: center">
+<div class="alert alert-primary" role="alert">
+<h1 style="text-align: center">Create new account</h1>
+    <form method="POST" style="line-height: 2;">
+        {% csrf_token %}
+        {{ form.username.label }}<br>
+       {{ form.username}}<br>
+        {{ form.password1.label }}<br>
+        {{ form.password1}}<br>
+
+         {{ form.password2.label }}<br>
+        {{ form.password2}}<br>
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px">Register</button>
+    </form>
+
+</form>
+</div>
+</div>

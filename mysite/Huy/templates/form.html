@@ -1,0 +1,13 @@
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <div style="left: 50%; top: 50%; transform: translate(-50%)">
+        {{ csrf_token }}
+</div>
+        <div class="container">
+            <h1>FORM</h1>
+            <form method="post" action="{% url 'thanks'%}">
+                {% csrf_token %}
+                {{ form1.as_p }}
+            <input type="submit" class="btn btn-primary">
+            </form>
+        </div>

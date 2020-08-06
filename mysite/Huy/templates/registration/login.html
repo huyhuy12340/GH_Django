@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <div class="container" style="text-align: center">
+                    <div class="alert alert-primary" role="alert">
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input">
+    <label>Ghi nhớ tôi </label>
+  </div>
+        <button type="submit" class="btn btn-primary">Login</button><br>
+        <p style="height: 0px"></p>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+        <a href="{% url 'Home' %}" class="btn btn-secondary">Home</a>
+    </form>
+
+        </div>        </div>
+

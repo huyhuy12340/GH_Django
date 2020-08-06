@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       body{
+           font-family: Arial;
+           background-image: url("https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") ;
+           background-size: 100%;
+           background-position: center;
+           background-attachment: fixed;
+           color: white;
+          background-blend-mode: overlay;
+            background-color: #313131;
+           z-index:-1
+       }
+       .container{
+           margin-left: 100px;
+           margin-right: 100px;
+       }
+       .a{
+           font-size: 25px;
+           color: white;
+           text-decoration: none;
+           padding: 5px 25px 5px 25px;
+           border: white solid 2px;
+           border-radius: 25px;
+           margin-right: 20px ;
+           transition: 0.3s;
+       }
+       .welcome{
+           float: right;
+           width: 30%;
+       }
+       .welcome1{
+           display: flex;
+           align-items: center;
+           width: 100%;
+       }
+       h3{
+           width: 15%;
+           margin-left: 200px;
+           text-align: center;
+       }
+       h1{
+           margin-left: 20px;
+           width: 50%;
+           font-size: 45px;
+           cursor: pointer;
+       }
+       .abc{
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           position: absolute;
+           height: 400px;
+           width: 75%;
+           margin: 50px auto;
+           display: flex;
+       }
+       .col{
+           height: 100%;
+           flex: 20px;
+           color: #fff;
+           box-sizing: border-box;
+           padding: 20px;
+           position: relative;
+           transition: 0.6s;
+       }
+       #col1{
+           background-color: darkcyan;
+       }
+        #col2{
+           background-color: darkblue;
+       }
+         #col3{
+           background-color: coral;
+       }
+         h2{
+             text-align: center;
+         }
+       .welcome2{
+           float: right;
+           margin-left: 800px ;
+           display: flex;
+       }
+       .a:hover{
+           color: black;
+           background: white;
+            box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white;
+       }
+      .caption{
+          max-width: 250px;
+          margin: 28px 0;
+          display: none;
+      }
+       button{
+           background-color: transparent ;
+           border: white solid 2px;
+           border-radius: 20px;
+           color: white;
+           font-size: 20px;
+           transition: 0.4s;
+           padding: 10px;
+           display: none;
+       }
+       button:hover{
+           color: #111;
+           background: white;
+           cursor: pointer;
+           font-weight: bolder;
+           font-size: 25px;
+       }
+       .col img{
+           width: 200px;
+           position: absolute;
+           bottom: 0;
+           right: 0;
+       }
+       .col:hover{
+           flex-grow: 2.5;
+       }
+       .col:hover .caption {
+           display: block;
+       }
+       .col:hover button {
+           display: block;
+       }
+    </style>
+</head>
+<body>
+<div class="container">
+        <div class="welcome1">
+{% if user.is_authenticated %}
+            <h1> GYMNIEX</h1>
+            <h3> Wellcome {{user.username}}</h3>
+    <div class="welcome">
+            <a class="a" href="{% url 'logout' %}">Logout
+                <a class="a" href="{% url 'formview' %}">Post</a></div>
+        {% else %}
+            <h1> GYMNIEX</h1>
+                <div class="welcome2">
+            <a href="{% url 'login_url' %}" class="a">Login</a>
+                    </div>
+            {% endif %}
+            </div>
+    <div class="abc">
+    <div class="col" id="col1">
+        <h2> DANCE </h2>
+        <div class="caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa.
+        </div>
+        <button type="button">Read more</button>
+        {% load static %}
+         <img src="{% static 'image/img1.png' %}">
+    </div>
+     <div class="col" id="col2">
+        <h2> GYM </h2>
+         <div class="caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa.
+        </div>
+        <button type="button">Read more</button>
+         {% load static %}
+         <img src="{% static 'image/img2.png' %}">
+    </div>
+     <div class="col" id="col3">
+        <h2> YOGA </h2>
+         <div class="caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa.
+        </div>
+        <button type="button">Read more</button>
+         {% load static %}
+         <img src="{% static 'image/img3.png' %}">
+    </div>
+    </div>
+</div>
+</body>
+</html>
